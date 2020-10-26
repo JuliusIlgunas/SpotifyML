@@ -28,6 +28,8 @@ df1 <- df %>% select(c("target", "acousticness", "danceability", "energy", "inst
 df1$target[df1$target == 1] <- "Liked"
 df1$target[df1$target == 0] <- "Disliked"
 
+table(df1$target)
+
 #Chagning the loudness values, from negative to positive. For better interpretation
 DF <- transform(df1, loudness = as.numeric(abs(loudness)), target = as.factor(target))
 
